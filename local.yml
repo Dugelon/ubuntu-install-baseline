@@ -1,0 +1,7 @@
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Apt-get Update
+    apt:  update_cache 
+  - name: Install htop
+    apt: name=htop
