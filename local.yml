@@ -1,7 +1,35 @@
 - hosts: localhost
   become: true
   tasks:
+  - name: Add repository to sources list
+    apt_repository:
+      repo: "{{repositories}}"
+      #repo: "deb http://ppa.launchpad.net/system76/pop/ubuntu bionic main"
+      state: present
+    vars:
+      repositories:
+        - "deb http://ppa.launchpad.net/system76/pop/ubuntu bionic main"
+        - "deb http://ch.archive.ubuntu.com/ubuntu/ bionic universe"
+        - "deb http://ch.archive.ubuntu.com/ubuntu/ bionic-updates universe"
+        - "deb http://ch.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse"
+        - "deb http://security.ubuntu.com/ubuntu bionic-security universe"
   - name: Apt-get Update
-    apt:  update_cache 
-  - name: Install htop
-    apt: name=htop
+    apt:
+      update_cache: yes
+  - name: Update all packages to the latest version
+    apt:
+      upgrade: dist
+
+  - name: Install my packages
+    apt:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - aptitude
+      - htop
+      - ncdu
+      - gnome-tweak-tool
+  - name: Upgrade all packages to the latest version
+    apt:
+      name: "*"
+      state: latest
