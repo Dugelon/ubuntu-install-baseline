@@ -10,6 +10,11 @@
       packages_remove:
       - chromium
  
+  # - name : Add specified repository into sources list.
+  #   apt_repository:
+  #     repo: ppa:oguzhaninan/stacer
+  #     state: present
+
   - name: Apt-get Update
     apt:
       update_cache: yes
@@ -30,13 +35,11 @@
       - vlc
       - tmux
 
-
   - name: Upgrade all packages to the latest version
     apt:
       name: "*"
       state: latest
 
-   # Install a snap with classic confinement
   - name: Install Visual Studio code with option --classic
     snap:
       name: code
