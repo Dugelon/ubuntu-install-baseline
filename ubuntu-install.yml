@@ -34,6 +34,7 @@
       - gnome-tweak-tool
       - vlc
       - tmux
+      - nmap
 
   - name: Upgrade all packages to the latest version
     apt:
@@ -44,3 +45,11 @@
     snap:
       name: code
       classic: yes
+
+  - name: Execute the Shell commands
+    shell: |
+      echo "options iwlwifi led_mode=1" >>/etc/modprobe.d/wlan.conf
+      echo "options iwlcore led_mode=1" >>/etc/modprobe.d/wlan.conf
+      echo "options iwlegacy led_mode=1" >>/etc/modprobe.d/wlan.conf
+      gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size
+      gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
