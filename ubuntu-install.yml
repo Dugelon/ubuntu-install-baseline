@@ -19,6 +19,11 @@
     apt:
       update_cache: yes
 
+  - name: Upgrade all packages to the latest version
+    apt:
+      name: "*"
+      state: latest   
+  
   - name: Update all packages to the latest version
     apt:
       upgrade: dist
@@ -36,12 +41,19 @@
       - tmux
       - nmap
       - ubuntu-restricted-extras
+      - gparted
       - krita
+      - filezilla
 
-  - name: Upgrade all packages to the latest version
+  - name: Install CLAMAV
     apt:
-      name: "*"
-      state: latest
+      name: "{{ packages_clamav }}"
+    vars:
+      packages_clamav:
+      - clamav
+      - clamav-daemon
+      - clamav-freshclam
+      - clamtk
 
   - name: Install Visual Studio code with option --classic
     snap:
@@ -50,7 +62,6 @@
   - name: Install Spotify
     snap:
       name: spotify
-
 
   - name: Execute the Shell commands
     shell: |
