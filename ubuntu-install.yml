@@ -35,6 +35,8 @@
       - vlc
       - tmux
       - nmap
+      - ubuntu-restricted-extras
+      - krita
 
   - name: Upgrade all packages to the latest version
     apt:
@@ -45,6 +47,10 @@
     snap:
       name: code
       classic: yes
+  - name: Install Spotify
+    snap:
+      name: spotify
+
 
   - name: Execute the Shell commands
     shell: |
