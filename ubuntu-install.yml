@@ -1,35 +1,36 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Add repository to sources list
-    apt_repository:
-      repo: "{{repositories}}"
-      #repo: "deb http://ppa.launchpad.net/system76/pop/ubuntu bionic main"
-      state: present
+ 
+  - name: Remove unwanted packages before upgrades
+    apt:
+      name: "{{ packages_remove }}"
+      state: absent
     vars:
-      repositories:
-        - "deb http://ppa.launchpad.net/system76/pop/ubuntu bionic main"
-        - "deb http://ch.archive.ubuntu.com/ubuntu/ bionic universe"
-        - "deb http://ch.archive.ubuntu.com/ubuntu/ bionic-updates universe"
-        - "deb http://ch.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse"
-        - "deb http://security.ubuntu.com/ubuntu bionic-security universe"
+      packages_remove:
+      - chromium
+ 
   - name: Apt-get Update
     apt:
       update_cache: yes
+
   - name: Update all packages to the latest version
     apt:
       upgrade: dist
 
   - name: Install my packages
     apt:
-      name: "{{ packages }}"
+      name: "{{ packages_install }}"
     vars:
-      packages:
+      packages_install:
       - aptitude
       - htop
       - ncdu
       - gnome-tweak-tool
       - vlc
+      - tmux
+
+
   - name: Upgrade all packages to the latest version
     apt:
       name: "*"
