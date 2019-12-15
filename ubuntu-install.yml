@@ -29,7 +29,14 @@
       - htop
       - ncdu
       - gnome-tweak-tool
+      - vlc
   - name: Upgrade all packages to the latest version
     apt:
       name: "*"
       state: latest
+
+   # Install a snap with classic confinement
+  - name: Install Visual Studio code with option --classic
+    snap:
+      name: code
+      classic: yes
