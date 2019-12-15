@@ -6,6 +6,6 @@ Version actuelle faite et testée sur Ubuntu 19.10 Eoan
 
 ./ubuntu-install .sh
 
-*Exécuter le playbook
+* Exécuter le playbook
 
 sudo ansible-playbook ubuntu-install.yml 
