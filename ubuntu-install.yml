@@ -67,9 +67,6 @@
     snap:
       name: kubectl
       classic: yes
-  - name: Install Stacer
-    snap:
-      name: stacer
 
   - name: Execute the Shell commands
     shell: |
