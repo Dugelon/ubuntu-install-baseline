@@ -2,10 +2,9 @@
 A utiliser pour déployer les softs et les configs sur un poste Ubuntu
 Version actuelle faite et testée sur Ubuntu 19.10 Eoan
 
-* Installer les premières dépendances
+* Télécharger le script et lancer l'installation
 
-./ubuntu-install .sh
+wget https://raw.githubusercontent.com/Dugelon/ubuntu-install-baseline/master/ubuntu-install.sh
+chmod a+x ubuntu-install.sh
+./ubuntu-install.sh
 
-* Exécuter le playbook
-
-sudo ansible-playbook ubuntu-install.yml 
