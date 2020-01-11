@@ -1,6 +1,6 @@
 #! /bin/bash
 #System
-sudo apt-get install && apt-get upgrade -y
+sudo apt-get update && apt-get upgrade -y
 #Softs
 sudo apt-get install ansible -y
 sudo apt-get install git -y
