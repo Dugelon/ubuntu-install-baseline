@@ -4,9 +4,9 @@ Version actuelle faite et testée sur Ubuntu 19.10 Eoan
 
 * Télécharger le script et lancer l'installation
 
-  **wget https://raw.githubusercontent.com/Dugelon/ubuntu-install-baseline/master/ubuntu-install.sh -P /tmp/
+  **wget https://raw.githubusercontent.com/Dugelon/ubuntu-install-baseline/master/ubuntu-install.sh -P /tmp/**
 
-  **chmod a+x /tmp/ubuntu-install.sh
+  **chmod a+x /tmp/ubuntu-install.sh**
 
-  **sudo /tmp/ubuntu-install.sh
+  **sudo /tmp/ubuntu-install.sh**
 
