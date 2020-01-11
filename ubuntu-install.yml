@@ -68,13 +68,16 @@
       name: kubectl
       classic: yes
 
-  - name: Execute the Shell commands
+  - name: Laptop and Gnome Tweaks
     shell: |
       echo "options iwlwifi led_mode=1" >>/etc/modprobe.d/wlan.conf
       echo "options iwlcore led_mode=1" >>/etc/modprobe.d/wlan.conf
       echo "options iwlegacy led_mode=1" >>/etc/modprobe.d/wlan.conf
       gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size
       gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+      
+  - name: Installation de Helm
+    shell: |
       curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
       helm repo add stable https://kubernetes-charts.storage.googleapis.com/
       helm repo update
