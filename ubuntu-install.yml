@@ -63,6 +63,10 @@
   - name: Install Spotify
     snap:
       name: spotify
+  - name: Install Kubectl
+    snap:
+      name: kubectl
+      classic: yes
 
   - name: Execute the Shell commands
     shell: |
