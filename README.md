@@ -4,7 +4,7 @@ Version actuelle faite et testée sur Ubuntu 19.10 Eoan
 
 * Télécharger le script et lancer l'installation
 
-  __sudo rm /tmp/ubuntu-install.*__
+  __sudo rm /tmp/ubuntu-install*__
 
   **wget https://raw.githubusercontent.com/Dugelon/ubuntu-install-baseline/master/ubuntu-install.sh -P /tmp/**
 
