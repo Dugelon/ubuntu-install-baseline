@@ -45,7 +45,6 @@
       - krita
       - filezilla
       - python-pip
-      n
       
   - name: Install Docker Prerequisites
     apt:
