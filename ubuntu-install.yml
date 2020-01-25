@@ -55,7 +55,7 @@
       - ca-certificates
       - curl 
       - gnupg-agent 
-      - software-properties-commo
+      - software-properties-common
 
   - name: Install CLAMAV
     apt:
