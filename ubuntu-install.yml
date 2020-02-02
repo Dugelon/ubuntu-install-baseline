@@ -71,12 +71,19 @@
     snap:
       name: code
       classic: yes
+      
   - name: Install Spotify
     snap:
       name: spotify
+      
   - name: Install Kubectl
     snap:
       name: kubectl
+      classic: yes
+
+  - name: Install MicroK8s
+    snap:
+      name: microk8s
       classic: yes
       
   - name: Add Docker apt key
