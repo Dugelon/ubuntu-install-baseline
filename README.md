@@ -1,4 +1,4 @@
-# Ubuntu install script
+# Ubuntu Desktop Installation
 A utiliser pour déployer les softs et les configs sur un poste Ubuntu
 
 Fait et testé sur Ubuntu 19.10 Eoan
