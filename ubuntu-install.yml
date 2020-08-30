@@ -44,7 +44,7 @@
       - gparted
       - krita
       - filezilla
-      - python-pip
+      - python3-pip
       
   - name: Install Docker Prerequisites
     apt:
